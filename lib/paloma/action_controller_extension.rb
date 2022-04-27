@@ -168,5 +168,7 @@ module Paloma
   end
 
 
-  ::ActionController::Base.send :include, ActionControllerExtension
+  ActiveSupport.on_load(:action_controller_base) do
+    include ActionControllerExtension
+  end
 end
